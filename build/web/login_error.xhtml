@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+      
+    <h:head>
+        <!-- Required meta tags -->
+        <link rel="icon" value="icon" library="image" name="AGEN-Z.png" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" 
+              integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"/>
+        
+        <!-- Script & Jquery -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>     
+
+        <!--untuk call css--> 
+        <h:outputStylesheet library="css" name="mainStyle.css"/> 
+        
+        <!--untuk call js--> 
+        <h:outputScript library="js" name="mainJs.js"/>
+        <title>Log In | Agen-Z</title>
+    </h:head>
+    <h:body>
+        <!-- Start Header -->
+       <nav class="pb-0 mb-0">
+            <h3 class="logo">AGEN-Z</h3> 
+            <ul class="menu">
+                <h:form class="pb-0 mb-0">
+                    <li class="item pb-0 mb-0"><h:commandLink action="index.xhtml" value="Home"></h:commandLink></li>
+                    <li class="item pb-0 mb-0"><h:commandLink action="company.xhtml" value="Company"></h:commandLink></li>
+                    <li class="item pb-0 mb-0"><h:commandLink action="contact.xhtml" value="Contact"></h:commandLink></li>
+                    <li class="item button first pb-0 mb-0"><h:commandLink action="login.xhtml" value="Log In"></h:commandLink></li>
+                    <li class="toggle"><a href="#"><span class="fa fa-bars"></span></a></li>
+                </h:form>
+            </ul>
+        </nav>
+        <!--End Header -->
+        
+        <!--Login Section-->
+        <div class="login-section">
+            <div class="login-wrapper">
+               <h2>Log In</h2>
+               <h:form class="needs-validation" pt:novalidate="true">
+                   <div class="login-box">
+                       <h:inputText value="#{tblAdmin.email}" id="email" class="is-invalid" pt:type="email" pt:placeholder="Enter email" pt:autofocus="true" required="true"/>
+                   </div>
+                    <div class="login-box">
+                        <h:inputSecret value="#{tblAdmin.password}" id="password" class="is-invalid" pt:placeholder="Enter Password" required="true"/>
+                        <div class="invalid-feedback">Email or Password invalid</div>
+                    </div>
+                    <div class="login-box button pt-2">
+                        <h:commandButton action="#{tblAdmin.login_admin()}" type="submit" class="" value="Login"/>
+                    </div>
+                   <p style="text-align: center">Don't have account? <h:commandLink action="signup.xhtml" value="Register Now"></h:commandLink></p>
+               </h:form>
+             </div>
+        </div>
+         
+        <!--Footer-->
+        <footer>
+            <h1>AGEN-Z</h1>
+            <p>&copy; 2022 All Right Reserved</p>
+        </footer>
+        
+        <script>
+            (function () {
+                "use strict";   
+                var forms = document.querySelectorAll(".needs-validation");
+                Array.prototype.slice.call(forms).forEach(function (form) {
+                    form.addEventListener(
+                        "submit",
+                        function (event) {
+                            if (!form.checkValidity()) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+
+                            form.classList.add("was-validated");
+                        },
+                        false
+                    );
+                });
+            })();
+        </script>
+    </h:body>
+</html>

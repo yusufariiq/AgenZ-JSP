@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" 
+              integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"/>
+        
+        <!--untuk call css--> 
+        <h:outputStylesheet library="css" name="adminStyles.css"/> 
+        
+        <!--untuk call js--> 
+        <h:outputScript library="js" name="mainJs.js"/> 
+        
+        <title>Employee | Agen-Z</title>
+    </h:head>
+    <h:body>
+        <!-- Start Header -->
+        <nav class="pb-0 mb-0">
+            <h3 class="logo">AGEN-Z</h3> 
+            <ul class="menu">
+                <h:form class=" mb-0 pb-0">
+                    <li class="item  mb-0 pb-0"><h:commandLink action="dashboard" value="Dashboard"></h:commandLink></li>
+                    <li class="item button first mb-0 pb-0"><h:commandLink action="index" value="Log Out"></h:commandLink></li>
+                    <li class="toggle mb-0 pb-0"><a href="#"><span class="fa fa-bars"></span></a></li>
+                </h:form>
+            </ul>
+        </nav>
+        <!--End Header -->
+        
+        <!-- Employee Data Table -->
+        <main class="tables">
+            <h:form>
+                <div class="d-flex float-start pb-2 ms-auto mt-3"><h3><i><b>Data Employee</b></i></h3></div>
+                    <div class="d-flex float-end pb-2 ms-auto mt-3">                  
+                        <div class="p-1 mr-3 pr-3">
+                            <h:inputText class="search-section pt-1 pb-1 p-2" value="#{tblEmployee.search}" pt:placeholder=" Search by Name" />
+                        </div>
+                        <div class="input-group-btn p-1">
+                            <h:commandLink class="btn btn-dark text-light" action="#{tblEmployee.search()}">
+                                <i class="fas fa-search"></i> Search
+                            </h:commandLink>
+                        </div>
+                    </div>
+            </h:form>
+            
+            <h:dataTable value="#{tblEmployee.employeeList}" var="emp">
+                <h:column>
+                    <f:facet name="header">ID</f:facet>
+                    #{emp.idEmployee}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Name</f:facet>
+                    #{emp.name}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Email</f:facet>
+                    #{emp.email}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Phone</f:facet>
+                    #{emp.phone}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Department</f:facet>
+                    #{emp.department}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Address</f:facet>
+                    #{emp.address}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Action</f:facet>
+                        <h:form>
+                            <h:commandLink action="#{tblEmployee.getById(emp.idEmployee)}" class="edit" title="Edit">
+                                <i class="fa fa-edit"></i>
+                            </h:commandLink>
+                            <h:commandLink action="#{tblEmployee.delete(emp.idEmployee)}" class="delete" title="Delete">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </h:commandLink>
+                        </h:form>
+                </h:column>
+            </h:dataTable>
+            
+        </main>
+    </h:body>
+</html>

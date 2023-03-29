@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <!--Required Meta Tag-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"/>
+       
+        <!--untuk call css--> 
+        <h:outputStylesheet library="css" name="mainStyle.css"/> 
+        
+        <!--untuk call js--> 
+        <h:outputScript library="js" name="mainJs.js"/> 
+        <title>Sign Up Admin | Agen-Z</title>
+    </h:head>
+    <h:body>
+       <!-- Start Header -->
+       <nav>
+            <h1 class="logo">AGEN-Z</h1> 
+            <ul class="menu">
+                <h:form>
+                    <li class="item"><h:commandLink action="index.xhtml" value="Home"></h:commandLink></li>
+                    <li class="item"><h:commandLink action="company.xhtml" value="Company"></h:commandLink></li>
+                    <li class="item"><h:commandLink action="contact.xhtml" value="Contact"></h:commandLink></li>
+                    <li class="item button first"><h:commandLink action="login.xhtml" value="Log In"></h:commandLink></li>
+                    <li class="toggle"><a href="#"><span class="fa fa-bars"></span></a></li>
+                </h:form>
+            </ul>
+        </nav>
+        <!--End Header -->
+        
+        <!--Form Section-->
+        <div class="login-section">
+            <div class="login-wrapper">
+               <h2>Add Admin</h2>
+               <h:form>
+                   <div class="login-box">
+                        <h:inputText  value="#{tblAdmin.name}" id="name" pt:placeholder="Enter name" pt:autofocus="true" required="true"/>
+                   </div>
+                   <div class="login-box">
+                       <h:inputText value="#{tblAdmin.email}" id="email" pt:type="email" pt:placeholder="Enter email" pt:autofocus="true" required="true"/>
+                   </div>
+                    <div class="login-box">
+                        <h:inputSecret value="#{tblAdmin.password}" id="password"  pt:placeholder="Enter Password" required="true"/>
+                    </div>
+                    <div class="login-box button">
+                        <h:commandButton  action="#{tblAdmin.save_admin()}" type="submit" class="" value="Submit"/>
+                    </div>
+               </h:form>
+            </div>
+        </div>
+        <!--Footer-->
+        <footer>
+            <h1>AGEN-Z</h1>
+            <p>&copy; 2022 All Right Reserved</p>
+        </footer>
+    </h:body>
+</html>
+

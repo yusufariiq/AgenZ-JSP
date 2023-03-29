@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <!--Required Meta Tag-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"/>
+       
+        <!--untuk call css--> 
+        <h:outputStylesheet library="css" name="adminStyles.css"/> 
+        
+        <!--untuk call js--> 
+        <h:outputScript library="js" name="mainJs.js"/> 
+        <title>Add Employee | Agen-Z</title>
+    </h:head>
+    <h:body>
+        <!-- Start Header -->
+        <nav>
+            <h1 class="logo">AGEN-Z</h1> 
+            <ul class="menu">
+                <h:form>
+                    <li class="item"><h:commandLink action="dashboard" value="Dashboard"></h:commandLink></li>
+                    <li class="item button first"><h:commandLink action="index" value="Log Out"></h:commandLink></li>
+                    <li class="toggle"><a href="#"><span class="fa fa-bars"></span></a></li>
+                </h:form>
+            </ul>
+        </nav>
+        <!--End Header -->
+        
+        <div class="regist-wrapper">
+            <div class="regist-container">
+                <div class="title">Add Employee</div>
+                <h:form>
+                    <div class="regist-details">
+                        <div class="regist-box">
+                            <span class="details" for="name">Full Name</span>
+                            <h:inputText value="#{tblEmployee.name}" id="name" pt:placeholder="Enter your name" required="true"/>
+                        </div>
+                        <div class="regist-box">
+                            <span class="details" for="email">Email</span>
+                            <h:inputText value="#{tblEmployee.email}" id="email" pt:type="email" pt:placeholder="Enter your email" required="true"/>
+                        </div>
+                        <div class="regist-box">
+                            <span class="details" for="phone">Phone number</span>
+                            <h:inputText value="#{tblEmployee.phone}" id="phone" required="true" pt:placeholder="Enter your number">
+                                <!--<f:validateRegex pattern="[0-9]{2}-+[0-9]{3}-+[0-9]{8}"/>-->
+                            </h:inputText>
+                        </div>
+                        <div class="regist-box">
+                            <span class="details" for="department" >Department</span>
+                            <h:selectOneMenu id="department" value="#{tblEmployee.department}">
+                                 <f:selectItem id="production" itemLabel="Production" itemValue="Production" />
+                                 <f:selectItem id="technology" itemLabel="Technology" itemValue="Technology" />
+                                 <f:selectItem id="creative" itemLabel="Creative" itemValue="Creative" />
+                                 <f:selectItem id="hrd" itemLabel="Human Resource" itemValue="HRD" />
+                                 <f:selectItem id="marketing" itemLabel="Marketing" itemValue="Marketing" />
+                                 <f:selectItem id="finance" itemLabel="Finance" itemValue="Finance"/>
+                            </h:selectOneMenu>
+                        </div>
+                    </div>
+                    <div class="regist-box">
+                        <span class="details" for="address">Address</span>
+                            <h:inputTextarea value="#{tblEmployee.address}" id="messages" pt:placeholder="Enter address" required="true"/>
+                    </div>
+                    <div class="submit-button">
+                        <h:commandButton action="#{tblEmployee.create()}" type="submit" value="Submit Data"/>
+                    </div>
+                </h:form>
+            </div>
+        </div>
+        
+        <!--Footer-->
+        <footer>
+            <h1>AGEN-Z</h1>
+            <p>&copy; 2022 All Right Reserved</p>
+        </footer>
+    </h:body>
+</html>
+

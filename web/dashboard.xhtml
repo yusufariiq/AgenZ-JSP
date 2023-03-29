@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        
+        <!--untuk call css--> 
+        <h:outputStylesheet library="css" name="adminStyles.css"/> 
+        
+        <!--untuk call js--> 
+        <h:outputScript library="js" name="mainJs.js"/> 
+        
+        <title>Dashboard | Agen-Z</title>
+    </h:head>
+    <h:body>
+         <!-- Start Header -->
+        <nav>
+            <h1 class="logo">AGEN-Z</h1> 
+            <ul class="menu">
+                <h:form>
+                    <li class="item"><h:commandLink action="dashboard" value="Dashboard"></h:commandLink></li>
+                    <li class="item button first"><h:commandLink action="index" value="Log Out"></h:commandLink></li>
+                    <li class="toggle"><a href="#"><span class="fa fa-bars"></span></a></li>
+                </h:form>
+            </ul>
+        </nav>
+        <!--End Header -->
+
+         <!-- Start About Section -->
+        <article>
+            <section class="dashboard-about" id="">
+              <div class="dashboard-image">
+                  <h:graphicImage class="landing-image" value="image" library="image" name="picture9.png"></h:graphicImage>
+              </div>
+
+              <div class="dashboard-content">
+                <h3>WELCOME!</h3>
+                <p>
+                Employee Management System is used to store data and maintain employee detail data, 
+                EMS have Feature namely CRUD (Create, Read, Update and Delete) have 3 section cards there is Create (to add data), 
+                Employees (to Read, Update, Delete) And Message section (is for view incoming message from client).
+                </p>
+              </div>
+            </section>
+          </article>
+          <!-- End About Section -->
+
+        <section class="card-container">
+            <h:form>
+                <h:commandLink action="addEmployee"><div class="card">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    <h1>Create</h1>
+                    <p>Create employee data</p>
+                    </div>
+                </h:commandLink>
+            </h:form>
+            <h:form>
+                <h:commandLink action="viewEmployee"><div class="card">
+                    <i class="fa fa-table" aria-hidden="true"></i>
+                    <h1>Employees</h1>
+                    <p>View employee data</p>
+                    </div>
+                </h:commandLink>
+            </h:form>
+            <h:form>
+                <h:commandLink action="viewMessage"><div class="card">
+                    <i class='far fa-comment-alt'></i>
+                    <h1>Message</h1>
+                    <p>View incoming message from client</p>
+                    </div>
+                </h:commandLink>
+            </h:form>
+        </section>
+
+        <!--Footer-->
+        <footer>
+            <h1>AGEN-Z</h1>
+            <p>&copy; 2022 All Right Reserved</p>
+        </footer>
+    </h:body>
+</html>
+

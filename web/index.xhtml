@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+   
+    <h:head>
+        <!-- Required meta tags -->
+        <link rel="icon" value="icon" library="image" name="AGEN-Z.png" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        
+        <!-- Script & Jquery -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>     
+
+        <!--untuk call css--> 
+        <h:outputStylesheet library="css" name="mainStyle.css"/> 
+        
+        <!--untuk call js--> 
+        <h:outputScript library="js" name="mainJs.js"/> 
+        <title>Home | Agen-Z</title>
+    </h:head>
+    <h:body>
+       <!-- Start Header -->
+       <nav>
+            <h1 class="logo">AGEN-Z</h1> 
+            <ul class="menu">
+                <h:form>
+                    <li class="item"><h:commandLink action="index.xhtml" value="Home"></h:commandLink></li>
+                    <li class="item"><h:commandLink action="company.xhtml" value="Company"></h:commandLink></li>
+                    <li class="item"><h:commandLink action="contact.xhtml" value="Contact"></h:commandLink></li>
+                    <li class="item button first"><h:commandLink action="login.xhtml" value="Log In"></h:commandLink></li>
+                    <li class="toggle"><a href="#"><span class="fa fa-bars"></span></a></li>
+                </h:form>
+            </ul>
+        </nav>
+        <!--End Header -->
+
+        <section class="splash-screen">
+            <div class="preloader">
+                <div class="loading">
+                    <div class="text">
+                        <p class="text-1">AGEN - Z</p>
+                        <p style="font-size: 13px;">presented by Group 4 - 3SE4</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="container">
+           <div class="row">
+               <div class="col-12">
+                <h:graphicImage class="landing-image" value="image" library="image" name="cover-gif.gif"></h:graphicImage>
+               </div>
+             </div>
+        </section>
+
+
+        <!--Content-->
+        <section class="container">
+            <div class="row">
+                <div class="column-head">
+                    <h1>LETS WORK TOGETHER</h1>
+                </div>
+                <div class="column-head">
+                    <p>SERVICE</p>
+                </div>
+                <div class="column">
+                    <h1>PUBLICATION</h1>
+                    <p>AGEN-Z as a publication media agency to spread information through informative, interactive and playful social media contents.</p>
+                </div>
+                <div class="column">
+                    <h1>ADVERTISING</h1>
+                    <p>AGEN-Z functions to be e media dedicated to creating, planning, and handling advertising 
+                        and provides an outside point of  view to the effort of selling the client's product or services or an outside firm.</p>
+                </div>
+              </div>
+        </section>
+
+        <!--Partnership-->
+        <section class="partnership">
+            <div class="row">
+                <div class="column">
+                    <h1>OUR CLIENTS</h1>
+                    <p>We understand that each brand has its own unique characteristic
+                    that can be developed through various methods and solutions.
+                    AGEN-Z is here to provide a solution.</p>
+                </div>
+                <div class="flex-column">
+                    <div class="flex-row">
+                        <h:graphicImage class="box" value="image" library="image" name="dana.png"></h:graphicImage>
+                        <h:graphicImage class="box" value="image" library="image" name="bobobox.png"></h:graphicImage>
+                        <h:graphicImage class="box" value="image" library="image" name="Vidio.png"></h:graphicImage>
+                        <h:graphicImage class="box" value="image" library="image" name="jnt.png"></h:graphicImage>             
+                    </div>
+                    <div class="flex-row">
+                        <h:graphicImage class="box" value="image" library="image" name="tokopedia.png"></h:graphicImage>
+                        <h:graphicImage class="box" value="image" library="image" name="erigo.png"></h:graphicImage>
+                        <h:graphicImage class="box" value="image" library="image" name="ajaib.png"></h:graphicImage>
+                        <h:graphicImage class="box" value="image" library="image" name="Traveloka.png"></h:graphicImage>             
+                    </div>
+                </div>   
+            </div>
+        </section>
+
+        <!--Footer-->
+        <footer>
+            <h1>AGEN-Z</h1>
+            <p>&copy; 2022 All Right Reserved</p>
+        </footer>
+    </h:body>
+</html>

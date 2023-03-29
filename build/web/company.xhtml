@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <!-- Required meta tags -->
+        <link rel="icon" value="icon" library="image" name="AGEN-Z.png" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        
+        <!-- Script & Jquery -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>     
+
+        <!--untuk call css--> 
+        <h:outputStylesheet library="css" name="mainStyle.css"/> 
+        
+        <!--untuk call js--> 
+        <h:outputScript library="js" name="mainJs.js"/> 
+        <title>Company | Agen-Z</title>
+
+        <!--untuk call css--> 
+        <h:outputStylesheet library="css" name="mainStyle.css"/> 
+    </h:head>
+    <h:body>
+       <!-- Start Header -->
+       <nav>
+            <h1 class="logo">AGEN-Z</h1> 
+            <ul class="menu">
+                <h:form>
+                    <li class="item"><h:commandLink action="index.xhtml" value="Home"></h:commandLink></li>
+                    <li class="item"><h:commandLink action="company.xhtml" value="Company"></h:commandLink></li>
+                    <li class="item"><h:commandLink action="contact.xhtml" value="Contact"></h:commandLink></li>
+                    <li class="item button first"><h:commandLink action="login.xhtml" value="Log In"></h:commandLink></li>
+                    <li class="toggle"><a href="#"><span class="fa fa-bars"></span></a></li>
+                </h:form>
+            </ul>
+        </nav>
+        <!--End Header -->
+        
+        <!-- Content -->
+        <main>
+            <section class="about">
+                <div class="row-about">
+                    <div class="column-head-about">
+                        <h1>ABOUT</h1>
+                        <hr></hr>
+                        <p>Agen-Z is a leading digital media agency millennial company, providing high quality entertainment content and service for people. 
+                            Agen-Z quickly planned, booked and optimized a wide range of performance-oriented, measurable online and offline media campaigns for growth companies from home and abroad,
+                            helping them to scale their business and enter new markets by providing quality services for the people we have provided.</p>
+                    </div>
+                    <div class="column-about">
+                        <h1>VISION</h1>
+                        <hr></hr>
+                        <p>Agen-Z aims to becomes main option for professional media agency that develops in media entertainment and support in the marketing process from producers to consumers to help them accomplish their desired goals through innovative and creative ideas.</p>
+                    </div>
+                    <div class="column-about">
+                        <h1>MISSION</h1>
+                        <hr></hr>
+                        <p>Agen-Z has a mission to maintain and improve customer satisfaction by providing the best quality service, starting from high-quality content. Improving communication relationships in establishing partnerships with all parties in order to achieve sustainable and mutually beneficial cooperation.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="profile">
+                <div class="team-title">
+                    <h1>OUR TEAM</h1>
+                    <hr></hr>
+                </div>
+                <div class="team">
+                    <div class="column-profile">
+                        <div class="row-profile">
+                            <h:graphicImage class="img-profile" value="image" library="image" name="Person1.png"/>
+                            <h3>Ariiq Yusuf Dhiya Ulhaq</h3>
+                            <p>Chief Technology Officer</p>
+                        </div>
+                        <div class="row-profile">
+                            <h:graphicImage class="img-profile" value="image" library="image" name="Person2.png"/>
+                            <h3>Erlangga Mohamad</h3>
+                            <h3>Prima Prasetya</h3>
+                            <p>Chief Executive Officer</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!--Footer-->
+        <footer>
+            <h1>AGEN-Z</h1>
+            <p>&copy; 2022 All Right Reserved</p>
+        </footer>
+        
+    </h:body>
+</html>
+

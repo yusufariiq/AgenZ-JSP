@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 14, 2022 9:20:41 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="POJO.TblEmployee" table="tbl_employee" catalog="company" optimistic-lock="version">
+        <id name="idEmployee" type="java.lang.Integer">
+            <column name="id_employee" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="100" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="55" not-null="true" unique="true" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="16" not-null="true" />
+        </property>
+        <property name="department" type="string">
+            <column name="department" length="55" not-null="true" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="100" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
