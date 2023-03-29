@@ -1,5 +1,5 @@
-# CompanyProfile-JSP
-Sebuah project kelompok tentang Company Profile yang dimana terdapat fitur CRUD atau Create, Read, Update, Delete dengan menggunakan JSP(Java Servlet Page)
+# AgenZ-JSP
+Sebuah project website kelompok tentang Company Profile yang dimana terdapat fitur CRUD atau Create, Read, Update, Delete dengan menggunakan JSP(Java Servlet Page)
 
 
 ## Features
@@ -72,4 +72,4 @@ TUTORIAL MEMBUAT DATABASE SESUAI DENGAN SOURCE CODE JSP
 MIT
 
 ## Contact
-Ariiq Yusuf - yusufariiq3@gmail.com
+Ariiq Yusuf - ariiqyusufadu@gmail.com
